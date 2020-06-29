@@ -17,6 +17,17 @@ public class BulletEnemigo : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Meteorite"))
+        {
+            Meteorite meteorite = collision.gameObject.GetComponent<Meteorite>();
+
+            if (meteorite != null)
+            {
+                Destroy(collision.gameObject);
+                Destroy(this.gameObject);
+            }
+        }
+
         if (collision.gameObject.CompareTag("Player"))
         {
             Player player = collision.gameObject.GetComponent<Player>();
@@ -28,5 +39,5 @@ public class BulletEnemigo : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-    }
+    }      
 }
