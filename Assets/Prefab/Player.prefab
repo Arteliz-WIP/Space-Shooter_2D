@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402798763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.57, z: 0}
+  m_LocalPosition: {x: 0, y: 0.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7108373938527772384}
@@ -187,7 +187,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -6536287391458957408, guid: 1aad2ca2bcc0df249a959df261bab44a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -281,7 +281,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPText: {fileID: 0}
   MaxHP: 100
-  timeBetweenShoots: 0.05
+  timeBetweenShoots: 0.35
   bulletPrefab: {fileID: 2574629846622621062, guid: 40571ac669f0acd40b7d0a72a504432e,
     type: 3}
   bulletOrigin: {fileID: 402798764}
+  deadParticlePrefab: {fileID: 6512502566102418576, guid: 3ddfb08e4f033e84586ee64ef41883f1,
+    type: 3}
+  shootAudioClip: {fileID: 8300000, guid: d5504aab124decb4f979ec3738f2f16e, type: 3}
+  explosionPlayerAudioClip: {fileID: 8300000, guid: ca942925269b6764d977dfff56b89ea8,
+    type: 3}

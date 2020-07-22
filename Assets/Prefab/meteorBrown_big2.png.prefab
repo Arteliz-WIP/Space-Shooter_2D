@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -947072167030862117, guid: 1aad2ca2bcc0df249a959df261bab44a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,8 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d169b5e7909d82746b2bdcfd90ba01a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 6
   damageAmount: 10
+  particlePrefab: {fileID: 5838875356109014259, guid: d6213693485052f439fe8f1ef975dd2d,
+    type: 3}
+  explosionMeteoritoAudioClip: {fileID: 8300000, guid: 9e641280bbbfad44ea33466e20985b5f,
+    type: 3}
 --- !u!61 &4686533476011217324
 BoxCollider2D:
   m_ObjectHideFlags: 0

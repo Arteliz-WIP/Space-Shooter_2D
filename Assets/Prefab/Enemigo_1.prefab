@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545118328}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: -0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4069990771323690121}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &2814467283430867235
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3328328576997583141, guid: 1aad2ca2bcc0df249a959df261bab44a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -177,7 +177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 10
   timeBetweenShoots: 1.5
-  speed: 3
+  speed: 6
   bulletPrefab: {fileID: 3943155356924720309, guid: 34713c6075ce6f14cbe4253abb3ea940,
     type: 3}
   bulletOrigin: {fileID: 1545118329}
+  EnemydeadParticlePrefab: {fileID: 4696513740917863705, guid: 7654aff9a2a2c9f41b33156cc5e560de,
+    type: 3}

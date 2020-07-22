@@ -7,6 +7,10 @@ public class Meteorite : MonoBehaviour
     public float speed = 5f;
     public float damageAmount = 10f;
 
+    public GameObject particlePrefab;
+
+    public AudioClip explosionMeteoritoAudioClip;
+
     private Rigidbody2D rb;
 
     private void Start()
@@ -25,12 +29,17 @@ public class Meteorite : MonoBehaviour
             {
                 player.Damage(damageAmount);
 
-                Destroy(this.gameObject);
+                DestroyMeteorite();
             }
+        }   
+    }
 
-
-        }
-    
+    public void DestroyMeteorite()
+    {
+        GameObject particles = Instantiate(particlePrefab, transform.position, transform.rotation);
+        AudioSource.PlayClipAtPoint(explosionMeteoritoAudioClip, transform.position, 0.9f);
+        Destroy(particles, 5f);
+        Destroy(this.gameObject);
     }
 
 }

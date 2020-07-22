@@ -10,6 +10,7 @@ public class Enemigo : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform bulletOrigin;
+    public GameObject EnemydeadParticlePrefab;
 
     private float currentHP;
     private float timeOfLastShoot;
@@ -36,6 +37,7 @@ public class Enemigo : MonoBehaviour
 
         if (currentHP <= 0f)
         {
+            Instantiate(EnemydeadParticlePrefab, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
     }

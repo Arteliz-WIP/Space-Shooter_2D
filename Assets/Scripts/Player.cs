@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletOrigin;
 
+    public GameObject deadParticlePrefab;
+
+    public AudioClip shootAudioClip;
+    public AudioClip explosionPlayerAudioClip;
+
     private float currentHP;
     private float timeOfLastShoot;
 
@@ -26,7 +31,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (Time.time > timeOfLastShoot + timeBetweenShoots)
-            Shoot();
+                Shoot();
         }
     }
 
@@ -37,14 +42,28 @@ public class Player : MonoBehaviour
 
         if (currentHP <= 0f)
         {
-            Debug.Log("Game Over");
-            Destroy(this.gameObject);
+            Dead();
         }
     }
 
     private void Shoot()
     {
-        Instantiate(bulletPrefab, bulletOrigin.position, bulletOrigin.rotation);
+        GameObject Bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletOrigin.rotation);
+        Destroy(Bullet, 5f);
         timeOfLastShoot = Time.time;
+
+        AudioSource.PlayClipAtPoint(shootAudioClip, transform.position, 0.7f);
+    }
+
+    private void Dead()
+    {
+        AudioSource.PlayClipAtPoint(explosionPlayerAudioClip, transform.position, 0.9f);
+
+        Instantiate(deadParticlePrefab, transform.position, transform.rotation);
+
+        FindObjectOfType<GameManager>().GameOver();
+
+        Destroy(this.gameObject);
+
     }
 }
